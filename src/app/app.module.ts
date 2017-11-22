@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { AlertModule} from 'ngx-bootstrap'; // Bootstrap
 import { NgModule } from '@angular/core';
-import {RouterModule, Routes} from '@angular/router'
+import {RouterModule, Routes} from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './component/navbar/navbar.component';
 import { SociallinksComponent } from './component/sociallinks/sociallinks.component';
@@ -15,8 +16,9 @@ const appRoutes: Routes = [
   {path: '' , component: HomeComponent},
   {path: 'about', component: AboutmeComponent },
   {path: 'resume', component: ResumeComponent},
-  {path: 'project', component: ProjectsComponent},
-  {path: 'contact', component: ContactComponent}
+  {path: 'projects', component: ProjectsComponent},
+  {path: 'contact', component: ContactComponent},
+  {path: 'admin', component: AdminloginComponent}
 ]
 
 @NgModule({
@@ -33,7 +35,8 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    AlertModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
