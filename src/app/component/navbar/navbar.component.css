@@ -4,3 +4,17 @@
 .navbar-toggler{
   float:right;
 }
+.navbar-default{
+  background-color: dimgrey;
+}
+
+.nav-item i {
+  color: lightskyblue;
+}
+
+.nav-item i:hover{
+  color: white;
+
+}
+/*.nav-item > .fa {  transition: font-size 0.35s ease;   }*/
+/*.nav-item:hover > .fa {  font-size: 3.2em;   }*/
