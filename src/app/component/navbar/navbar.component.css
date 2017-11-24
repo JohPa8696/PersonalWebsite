@@ -1,20 +1,28 @@
 .nav-item{
-  text-align: center;
+  /*text-align: center;*/
+  color: #9e9e9e !important;
+}
+.nav-item:hover,
+.nav-item i:hover{
+  color: white !important;
 }
 .navbar-toggler{
   float:right;
 }
-.navbar-default{
-  background-color: dimgrey;
-}
-
 .nav-item i {
-  color: lightskyblue;
+  color: #9e9e9e;
 }
 
-.nav-item i:hover{
-  color: white;
-
+.navbar-toggler .navbar-toggler-icon{
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(158,158,158, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
+.navbar-toggler{
+  margin-top: 15px;
+  /*float: right !important ;*/
+}
+#nav-btn{
+  border: 1px solid  #9e9e9e;
+}
+
 /*.nav-item > .fa {  transition: font-size 0.35s ease;   }*/
 /*.nav-item:hover > .fa {  font-size: 3.2em;   }*/
