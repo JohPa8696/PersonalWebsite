@@ -20,8 +20,14 @@
   margin-top: 15px;
   /*float: right !important ;*/
 }
-#nav-btn{
-  border: 1px solid  #9e9e9e;
+#nav-btn {
+  border: 1px solid #9e9e9e;
+}
+@media (max-width:990px) {
+  .nav-item i,
+  br {
+    display: none !important;
+  }
 }
 
 /*.nav-item > .fa {  transition: font-size 0.35s ease;   }*/
