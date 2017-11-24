@@ -1,0 +1,45 @@
+footer {
+  width: 100%;
+  padding: 1%;
+}
+
+.fa{
+  margin: 3px auto;
+  color: white;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 30px;
+}
+#github:hover{
+  color: black !important;
+}
+#linkedin:hover{
+  color: #0077B5;
+}
+#quora:hover{
+  color: #AA2200;
+}
+a:hover, a:active, a:visited, a:focus{
+  text-decoration: none !important;
+}
+
+h5{
+  margin:0 auto;
+  height: 100%;
+  /*float:left;*/
+  color:white;
+  font-size: 2em;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .fa{
+    padding-left: 6px;
+    padding-right: 6px;
+    font-size: 20px;
+  }
+  h5{
+    font-size:18px;
+  }
+
+}
