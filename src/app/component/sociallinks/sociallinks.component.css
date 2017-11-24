@@ -1,6 +1,8 @@
 footer {
+  /*position: absolute;*/
   width: 100%;
   padding: 1%;
+  /*bottom: 0 !important;*/
 }
 
 .fa{
@@ -32,7 +34,7 @@ h5{
   text-align: center;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 620px) {
   .fa{
     padding-left: 6px;
     padding-right: 6px;
