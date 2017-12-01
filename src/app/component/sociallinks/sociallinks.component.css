@@ -1,8 +1,8 @@
 footer {
-  /*position: absolute;*/
-  width: 100%;
-  padding: 1%;
-  /*bottom: 0 !important;*/
+  width: 80%;
+  /*padding: 1%;*/
+  bottom: 0px;
+  background-color: #0090ad !important;
 }
 
 .fa{
@@ -26,15 +26,14 @@ a:hover, a:active, a:visited, a:focus{
 }
 
 h5{
-  margin:0 auto;
+  margin:5px auto;
   height: 100%;
-  /*float:left;*/
   color:white;
-  font-size: 2em;
+  font-size: 20px;
   text-align: center;
 }
 
-@media (max-width: 620px) {
+@media (max-width: 785px) {
   .fa{
     padding-left: 6px;
     padding-right: 6px;
