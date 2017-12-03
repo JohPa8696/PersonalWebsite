@@ -1,7 +1,8 @@
 .divider{
   min-height: 10px;
   width: 100%;
-  background-color: #0090ad;
+  /*background-color: #0090ad;*/
+  background-color: #22A39F
 }
 
 .container{
