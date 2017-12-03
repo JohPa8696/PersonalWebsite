@@ -11,6 +11,7 @@ import { AboutmeComponent } from './component/aboutme/aboutme.component';
 import { ResumeComponent } from './component/resume/resume.component';
 import { ContactComponent } from './component/contact/contact.component';
 import { HomeComponent } from './component/home/home.component';
+import { WorkComponent } from './component/work/work.component';
 
 const appRoutes: Routes = [
   {path: '' , component: HomeComponent},
@@ -18,7 +19,8 @@ const appRoutes: Routes = [
   {path: 'resume', component: ResumeComponent},
   {path: 'projects', component: ProjectsComponent},
   {path: 'contact', component: ContactComponent},
-  {path: 'admin', component: AdminloginComponent}
+  {path: 'admin', component: AdminloginComponent},
+  {path: 'work', component: WorkComponent}
 ]
 
 @NgModule({
@@ -32,6 +34,7 @@ const appRoutes: Routes = [
     ResumeComponent,
     ContactComponent,
     HomeComponent,
+    WorkComponent,
   ],
   imports: [
     BrowserModule,
