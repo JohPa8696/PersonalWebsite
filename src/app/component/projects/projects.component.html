@@ -1,3 +1,32 @@
 <div class="container text-center">
   <h1>Projects and Hackathons</h1>
+
+  <!-- <ul class="Unstyled" *ngIf="candidates?.length>0; else noCandidates"> -->
+  <!-- <li class="card mb-1" *ngFor="let c of candidates"> -->
+  <li class="card mb-3" >
+    <div class="mx-5 py-4 row justify-content-between  align-items-center">
+      <!-- <div>
+        <h4 class="card-title">{{c.name}}  </h4>
+        <span class="card-text-createdby">Created by: {{c.adder}} | Repository: {{c.repositoryName}}<br />   Progress: {{c.progressStatus}} | Last Updated: {{checkLastUpdated(c.timestamp)}} </span><br>
+      </div>
+      <div>
+        <button *ngIf="c.progressStatus === 'Doing'" class="btn btn-purple btn-sm" (click)="candidateDone(c.githubID)">Mark as done</button>
+        <button *ngIf="c.progressStatus === 'Done' " class="btn btn-purple btn-sm" (click)="openEmailManager(c.githubID)"> Email Manager</button>
+        <button *ngIf="c.progressStatus !=='Doing' && c.progressStatus !== 'Done'"class="btn btn-success btn-sm viewResult" (click)="viewResults(c.githubID)"> View Results</button>
+        <button class="btn btn-link" (click)="displayCandidateDetails(c.$key)"> Details</button>
+        <button class="btn btn-link" (click)="deleteCandidate(c)"> Delete</button>
+      </div> -->
+      <div>
+        <h4 class="card-title">Fall Detection System</h4>
+        <span class="card-text-createdby">C# asjdfklsaj aksdf I dont like typing that much</span><br>
+      </div>
+      <div>
+        <!-- <button *ngIf="c.progressStatus === 'Doing'" class="btn btn-purple btn-sm" (click)="candidateDone(c.githubID)">Mark as done</button>
+        <button *ngIf="c.progressStatus === 'Done' " class="btn btn-purple btn-sm" (click)="openEmailManager(c.githubID)"> Email Manager</button>
+        <button *ngIf="c.progressStatus !=='Doing' && c.progressStatus !== 'Done'"class="btn btn-success btn-sm viewResult" (click)="viewResults(c.githubID)"> View Results</button>
+        <button class="btn btn-link" (click)="displayCandidateDetails(c.$key)"> Details</button>
+        <button class="btn btn-link" (click)="deleteCandidate(c)"> Delete</button> -->
+      </div>
+    </div>
+  </li>
 </div>
