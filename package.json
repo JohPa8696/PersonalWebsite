@@ -23,6 +23,7 @@
     "@angular/platform-browser": "^4.4.6",
     "@angular/platform-browser-dynamic": "^4.4.6",
     "@angular/router": "^4.4.6",
+    "@ngtools/webpack": "^1.2.4",
     "bootstrap": "^4.0.0-alpha.6",
     "core-js": "^2.5.1",
     "font-awesome": "^4.7.0",
