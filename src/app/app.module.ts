@@ -1,3 +1,4 @@
+import {environment} from './../environments/environment';
 import { BrowserModule } from '@angular/platform-browser';
 import { AlertModule} from 'ngx-bootstrap'; // Bootstrap
 import { NgModule } from '@angular/core';
@@ -12,12 +13,15 @@ import { ResumeComponent } from './component/resume/resume.component';
 import { ContactComponent } from './component/contact/contact.component';
 import { HomeComponent } from './component/home/home.component';
 import { WorkComponent } from './component/work/work.component';
+import { AngularFireModule} from 'angularfire2';
+import { AngularFireDatabaseModule} from 'angularfire2/database';
+
 
 const appRoutes: Routes = [
   {path: '' , component: HomeComponent},
   {path: 'about', component: AboutmeComponent },
   {path: 'resume', component: ResumeComponent},
-  {path: 'projects', component: ProjectsComponent},
+  {path: 'projfirebaseects', component: ProjectsComponent},
   {path: 'contact', component: ContactComponent},
   {path: 'admin', component: AdminloginComponent},
   {path: 'work', component: WorkComponent}
@@ -39,7 +43,9 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
-    AlertModule.forRoot()
+    AlertModule.forRoot(),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]
