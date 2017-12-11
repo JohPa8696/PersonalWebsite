@@ -21,7 +21,7 @@ const appRoutes: Routes = [
   {path: '' , component: HomeComponent},
   {path: 'about', component: AboutmeComponent },
   {path: 'resume', component: ResumeComponent},
-  {path: 'projfirebaseects', component: ProjectsComponent},
+  {path: 'projects', component: ProjectsComponent},
   {path: 'contact', component: ContactComponent},
   {path: 'admin', component: AdminloginComponent},
   {path: 'work', component: WorkComponent}

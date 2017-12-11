@@ -75,3 +75,15 @@ h1,h2{
 }
 
 /*NEED TO RESIZE THE CIRCLES AND TEXT FOR PHONE */
+
+
+@media (max-width:990px) {
+  h1{
+    font-size:3em;
+  }
+
+  .education,.company{
+    display: inline-block;
+    vertical-align: middle !important;
+  }
+}
