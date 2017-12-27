@@ -15,6 +15,7 @@ import { HomeComponent } from './component/home/home.component';
 import { WorkComponent } from './component/work/work.component';
 import { AngularFireModule} from 'angularfire2';
 import { AngularFireDatabaseModule} from 'angularfire2/database';
+import { AngularFirestoreModule} from 'angularfire2/firestore'
 
 
 const appRoutes: Routes = [
@@ -45,7 +46,8 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     AlertModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
