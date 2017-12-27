@@ -1,5 +1,5 @@
 export interface Project{
-    $key: string;
+    $key?: string;
     title?: string;
     type?: string;
     repoUrl?: string;

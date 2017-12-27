@@ -1,39 +1,37 @@
 <div class="container text-center">
   <h1>Projects and Hackathons</h1>
-  <div class="row">
+  <div class="row" *ngIf="projects?.length > 0 ; else noProjects">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
       <div class="card-columns">
-        <div class="card">
-          <div class="card-header bg-l">
-            Fall Detection System
-            <span style="float: right;">System</span>
-          </div>
-          <div class="card-block">
-            <div class="card-subtitle mb-2 text-muted">
-              <span class="badge badge-success">C#</span>
-              <span class="badge badge-success">Java</span>
-              <span class="badge badge-info">Firebase</span>
-              <span class="badge badge-info">Microsoft Kinect</span>
-              <span class="badge badge-primary">Accord.net</span>
-            </div>
-            C# asjdfklsaj aksdf I dont like typing that much
-          </div>
-        </div>
 
-        <div class="card">
-          <div class="card-header bg-l">
-            Fall Detection System
-            <span style="float: right;">System</span>
+        <div class="card" *ngFor="let project of projects">
+          <div class="card-header" [ngStyle]="getHeaderColor(project.type)" title= " A '{{project.type}}' software project">
+            <a class="title" href="{{project.repoUrl}}">{{project.title}}</a>
+            <span style="float: right; color: black;">{{project.type}}</span>
           </div>
           <div class="card-block">
             <div class="card-subtitle mb-2 text-muted">
-              <span class="badge badge-success">C#</span>
-              <span class="badge badge-success">Java</span>
-              <span class="badge badge-info">Firebase</span>
-              <span class="badge badge-info">Microsoft Kinect</span>
-              <span class="badge badge-primary">Accord.net</span>
+              <span class="badge badge-success" *ngFor="let l of project.languages">{{l}}</span>
+              <span class="badge badge-info"  *ngFor="let t of project.technologies">{{t}}</span>
+              <span class="badge badge-primary" *ngFor="let f of project.framework">{{f}}</span>
+              <span class="badge badge-warning" *ngIf="project.ML">Machine Learning</span>
             </div>
-            C# asjdfklsaj aksdf I dont like typing that much
+            {{project.description}}
+            <a data-toggle="collapse" href="#collapse-example" aria-expanded="true" aria-controls="collapse-example" id="heading-example" class="d-block">
+                <i class="fa fa-chevron-down"></i>
+            </a>
+            <div id="collapse-example" class="collapse hide" aria-labelledby="heading-example">
+              <div class="images">
+                <div class="card-body">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon
+            officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3
+            wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
+            Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan
+            excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt
+            you probably haven't heard of them accusamus labore sustainable VHS.
+        </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -41,3 +39,8 @@
     </div>
   </div>
 </div>
+
+<ng-template #noProjects>
+  <!-- <md-spinner></md-spinner> -->
+  <h5> I'll add projects soon :)!!!</h5>
+</ng-template>

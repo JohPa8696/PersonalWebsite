@@ -17,7 +17,8 @@ import { AngularFireModule} from 'angularfire2';
 import { AngularFireDatabaseModule} from 'angularfire2/database';
 import { AngularFirestoreModule} from 'angularfire2/firestore'
 
-
+// Service Imports
+import { DataService } from './services/data.service'
 const appRoutes: Routes = [
   {path: '' , component: HomeComponent},
   {path: 'about', component: AboutmeComponent },
@@ -49,7 +50,7 @@ const appRoutes: Routes = [
     AngularFireDatabaseModule,
     AngularFirestoreModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
