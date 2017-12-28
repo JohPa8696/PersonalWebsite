@@ -15,6 +15,11 @@ h1{
   margin: 50px auto;
 }
 .card {
+  padding: 0px !important;
+}
+
+.card-block{
+  padding: 0px;
 }
 
 div.card-title{
@@ -32,13 +37,14 @@ span.badge{
 
 .card-block {
   background-color: #F3EFE0;
+  font-weight: normal;
 }
 
 a.title{
   color:white;
 }
 
-a.title:hover, a.title:active, a.title:visited, a.title:focus{
+a.title:hover, a.title:active{
   text-decoration: none !important;
   color: black;
 }
@@ -49,6 +55,12 @@ a.title:hover, a.title:active, a.title:visited, a.title:focus{
 
 .collapsed .fa {
   transform: rotate(180deg);
+}
+
+.collapse {
+  background-color: white;
+  width: 100% !important;
+  font-weight: normal;
 }
 
 @media (max-width:1200px) {

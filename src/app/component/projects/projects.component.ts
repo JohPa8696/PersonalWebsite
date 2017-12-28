@@ -25,11 +25,11 @@ export class ProjectsComponent implements OnInit {
     'background-color':'#b740b3',
     'color':'white'
   }
+
   constructor( private dataService: DataService) { }
 
   ngOnInit() {
     this.dataService.getProjects().subscribe(projects =>{
-      // console.log(projects);/
       this.projects = projects;
     });
   }

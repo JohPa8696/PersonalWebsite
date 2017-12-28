@@ -2,7 +2,7 @@ import {environment} from './../environments/environment';
 import { BrowserModule } from '@angular/platform-browser';
 import { AlertModule} from 'ngx-bootstrap'; // Bootstrap
 import { NgModule } from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
+import { RouterModule, Routes} from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './component/navbar/navbar.component';
 import { SociallinksComponent } from './component/sociallinks/sociallinks.component';
@@ -15,7 +15,8 @@ import { HomeComponent } from './component/home/home.component';
 import { WorkComponent } from './component/work/work.component';
 import { AngularFireModule} from 'angularfire2';
 import { AngularFireDatabaseModule} from 'angularfire2/database';
-import { AngularFirestoreModule} from 'angularfire2/firestore'
+import { AngularFirestoreModule} from 'angularfire2/firestore';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 // Service Imports
 import { DataService } from './services/data.service'
@@ -48,7 +49,8 @@ const appRoutes: Routes = [
     AlertModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    NgbModule.forRoot()
   ],
   providers: [DataService],
   bootstrap: [AppComponent]
