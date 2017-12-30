@@ -3,10 +3,10 @@ export interface Project{
     title?: string;
     type?: string;
     repoUrl?: string;
-    languages?:{};
-    technologies?:{};
-    framework?:{};
-    images?:{};
-    videos?:{};
+    languages?:string[];
+    technologies?:string[];
+    framework?:string[];
+    images?:string[];
+    videos?:string[];
     description?:string;
 }

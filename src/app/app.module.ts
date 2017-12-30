@@ -17,9 +17,13 @@ import { AngularFireModule} from 'angularfire2';
 import { AngularFireDatabaseModule} from 'angularfire2/database';
 import { AngularFirestoreModule} from 'angularfire2/firestore';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
 
 // Service Imports
-import { DataService } from './services/data.service'
+import { DataService } from './services/data.service';
+import { UploadService } from './services/upload.service';
+import { ContentmanagerComponent } from './component/contentmanager/contentmanager.component';
+import { FiledropDirective } from './component/contentmanager/filedrop.directive';
 const appRoutes: Routes = [
   {path: '' , component: HomeComponent},
   {path: 'about', component: AboutmeComponent },
@@ -27,7 +31,8 @@ const appRoutes: Routes = [
   {path: 'projects', component: ProjectsComponent},
   {path: 'contact', component: ContactComponent},
   {path: 'admin', component: AdminloginComponent},
-  {path: 'work', component: WorkComponent}
+  {path: 'work', component: WorkComponent},
+  {path: 'contentmanager', component: ContentmanagerComponent}
 ]
 
 @NgModule({
@@ -42,6 +47,8 @@ const appRoutes: Routes = [
     ContactComponent,
     HomeComponent,
     WorkComponent,
+    ContentmanagerComponent,
+    FiledropDirective,
   ],
   imports: [
     BrowserModule,
@@ -50,9 +57,11 @@ const appRoutes: Routes = [
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFirestoreModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    FormsModule
   ],
-  providers: [DataService],
+  providers: [DataService,
+              UploadService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

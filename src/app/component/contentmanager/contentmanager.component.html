@@ -1,0 +1,93 @@
+<div class="container ">
+
+
+  <div class="form-check form-check-inline">
+    <label class="form-check-label">
+      <input class="form-check-input" type="radio" name="projectRadio" [(ngModel)]="isProject" [value]="true" checked>
+      Project
+    </label>
+  </div>
+  <div class="form-check form-check-inline text-center">
+    <label class="form-check-label">
+      <input class="form-check-input" type="radio" name="exampleRadios" [(ngModel)]="isProject" [value]="false">
+      Experience
+    </label>
+  </div>
+
+  <!-- Project Form -->
+  <form id="projectform" *ngIf=isProject>
+    <!-- Title -->
+    <div class="form-group">
+      <label for="projectTitle">Project</label>
+      <input type="text" name="projectTitle" class="form-control" id="projectTitle" placeholder="Project Title" [(ngModel)]="title" required >
+    </div>
+    <!-- Type -->
+    <div class="form-group">
+      <label for="projectType">Type</label>
+      <input type="text" name="projectType" class="form-control" id="projectType" placeholder="Project Type"  [(ngModel)]="type" required>
+    </div>
+    <!-- Languages -->
+    <div class="form-group">
+      <label for="languages">Programming Languages</label>
+      <input type="text" name="languages" class="form-control" id="languages" placeholder="java, C# etc..."  [(ngModel)]="languages" required>
+    </div>
+    <!-- technologies -->
+    <div class="form-group">
+      <label for="technologies">Technologies Used</label>
+      <input type="text" name="technologies" class="form-control" id="technologies" placeholder="Kinect, Camera etc..."  [(ngModel)]="technologies" required>
+    </div>
+    <!-- Framework -->
+    <div class="form-group">
+      <label for="framework">Framework and Libararies</label>
+      <input type="text" name="framework" class="form-control" id="framework" placeholder="Accord.Net, JavaFx etc..."  [(ngModel)]="framework" required>
+    </div>
+    <!-- Description -->
+    <div class="form-group">
+      <label for="description">Project Description</label>
+      <textarea name="description" rows="6" class="form-control" id="description" placeholder="Description Here ..."  [(ngModel)]="description" required></textarea >
+    </div>
+
+
+    <div *ngIf="currentUpload">
+        <progress class="progress is-success" min=1 max=100 value="{{ currentUpload?.progress }}"></progress>
+        Progress: {{currentUpload?.name}} | {{currentUpload?.progress}}% Complete
+    </div>
+    <div class="box">
+        <label>Drop Images here</label>
+        <div id="dropzone" class="dropzone"
+             appFiledrop
+             (filesDropped)="handleDrop($event)"
+             (filesHovered)="dropzoneState($event)"
+             [ngClass]="{'active': dropzoneActive}">
+             <i id="uploadicon" class="fa fa-cloud-upload fa-4x"></i>
+        </div>
+    </div>
+
+    <div class="form-check">
+      <label class="form-check-label">
+        <input type="checkbox" class="form-check-input">
+        Check me out
+      </label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+  <form id="experienceform" action="index.html" method="post" *ngIf=!isProject>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Experience</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    </div>
+    <div class="form-check">
+      <label class="form-check-label">
+        <input type="checkbox" class="form-check-input">
+        Check me out
+      </label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

@@ -1,0 +1,21 @@
+.container{
+  width: 80%;
+  margin:0 auto;
+  margin-top:50px;
+  padding: 10px;
+  border-top: 2px groove #22A39F;
+}
+
+.dropzone{
+    /* position: relative; */
+    width: 100%;
+    height: 250px;
+    margin: 10px;
+    border: 2px solid black;
+    /* float: left; */
+    text-align: center;
+}
+
+i{
+  margin-top:10%;
+}
