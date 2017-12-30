@@ -12,6 +12,7 @@ export class DataService {
 
   constructor( public afs: AngularFirestore) {
     // this.projects = this.afs.collection('projects').valueChanges();
+    this.projectCollection= this.afs.collection('projects');
     this.loadData();
    }
 
@@ -28,6 +29,10 @@ export class DataService {
   getProjects(){
     this.loadData();
     return this.projects;
+  }
+
+  addProject(project: Project){
+    this.projectCollection.add(project);
   }
 
 }

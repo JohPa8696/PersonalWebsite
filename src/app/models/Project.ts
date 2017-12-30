@@ -9,4 +9,5 @@ export interface Project{
     images?:string[];
     videos?:string;
     description?:string;
+    isML:boolean;
 }

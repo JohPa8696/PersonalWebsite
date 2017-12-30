@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Project } from '../../models/Project';
 import { UploadService } from '../../services/upload.service';
 import { Upload } from '../../models/Upload';
-import {Observable} from 'rxjs/Rx';
+import { Observable } from 'rxjs/Rx';
+import { DataService } from '../../services/data.service';
 import * as _ from "lodash";
 @Component({
   selector: 'app-contentmanager',
@@ -12,7 +13,8 @@ import * as _ from "lodash";
 export class ContentmanagerComponent implements OnInit {
   isProject = true;
 
-  title: strin="";
+  // Project fields
+  title: string="";
   type: string="";
   languages: string="";
   technologies: string="";
@@ -21,11 +23,14 @@ export class ContentmanagerComponent implements OnInit {
   videos: string="";
   isML: boolean=false;
   description: string="";
-
   currentUpload: Upload;
   dropzoneActive:boolean = false;
+  project: Project;
 
-  constructor(private uploadService: UploadService) { }
+  // Experience fields
+
+  constructor(private uploadService: UploadService,
+              private dataService: DataService) { }
 
   ngOnInit() {
   }
@@ -41,8 +46,36 @@ export class ContentmanagerComponent implements OnInit {
       this.uploadService.uploadImage(this.currentUpload);
       setTimeout(()=>{
         this.images.push(this.currentUpload.url);
-        // console.log(this.images);
       }, 5000);
     });
   }
+
+  onProjectSubmit(){
+    if(this.title != '' && this.type != '' && this.languages !='' && this.technologies !='' && this.frameworks != ''
+      && this.description != ''){
+        this.project = {
+          title: this.title,
+          type: this.type,
+          languages: this.languages.split(','),
+          technologies: this.technologies.split(','),
+          framework: this.frameworks.split(','),
+          images: this.images,
+          videos: this.videos,
+          isML: this.isML,
+          description: this.description
+        };
+        this.dataService.addProject(this.project);
+        this.title = "";
+        this.type="";
+        this.languages="";
+        this.technologies="";
+        this.frameworks="";
+        this.images=[];
+        this.isML=false;
+        this.videos="";
+        this.description="";
+      }
+  }
+
+
 }
