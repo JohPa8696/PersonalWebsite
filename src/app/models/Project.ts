@@ -7,6 +7,6 @@ export interface Project{
     technologies?:string[];
     framework?:string[];
     images?:string[];
-    videos?:string[];
+    videos?:string;
     description?:string;
 }

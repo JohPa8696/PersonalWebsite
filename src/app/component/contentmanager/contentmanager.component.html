@@ -15,7 +15,7 @@
   </div>
 
   <!-- Project Form -->
-  <form id="projectform" *ngIf=isProject>
+  <form id="projectform" *ngIf=isProject  (ngSubmit)="onProjectSubmit()">
     <!-- Title -->
     <div class="form-group">
       <label for="projectTitle">Project</label>
@@ -38,8 +38,15 @@
     </div>
     <!-- Framework -->
     <div class="form-group">
-      <label for="framework">Framework and Libararies</label>
-      <input type="text" name="framework" class="form-control" id="framework" placeholder="Accord.Net, JavaFx etc..."  [(ngModel)]="framework" required>
+      <label for="frameworks">Framework and Libararies</label>
+      <input type="text" name="frameworks" class="form-control" id="framework" placeholder="Accord.Net, JavaFx etc..."  [(ngModel)]="frameworks" required>
+    </div>
+    <!-- ML -->
+    <div class="form-check">
+      <label class="form-check-label">
+        <input type="checkbox" class="form-check-input" [checked]="isML" (change)="isML = !isML">
+        Used Machine Learning?
+      </label>
     </div>
     <!-- Description -->
     <div class="form-group">
@@ -47,6 +54,11 @@
       <textarea name="description" rows="6" class="form-control" id="description" placeholder="Description Here ..."  [(ngModel)]="description" required></textarea >
     </div>
 
+    <!-- Video -->
+    <div class="form-group">
+      <label for="video">Video Links</label>
+      <input name="video" rows="6" class="form-control" id="video" placeholder="Links Here ..."  [(ngModel)]="videos">
+    </div>
 
     <div *ngIf="currentUpload">
         <progress class="progress is-success" min=1 max=100 value="{{ currentUpload?.progress }}"></progress>
@@ -63,13 +75,7 @@
         </div>
     </div>
 
-    <div class="form-check">
-      <label class="form-check-label">
-        <input type="checkbox" class="form-check-input">
-        Check me out
-      </label>
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary" >Submit</button>
   </form>
 
   <form id="experienceform" action="index.html" method="post" *ngIf=!isProject>

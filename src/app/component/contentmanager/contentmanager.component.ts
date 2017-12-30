@@ -12,15 +12,15 @@ import * as _ from "lodash";
 export class ContentmanagerComponent implements OnInit {
   isProject = true;
 
-  title: string;
-  type: string;
-  languages: string;
-  technologies: string;
-  frameworks: string;
+  title: strin="";
+  type: string="";
+  languages: string="";
+  technologies: string="";
+  frameworks: string="";
   images: string[]=[];
-  videos: string[]=[];
-  isML: boolean;
-  description: string;
+  videos: string="";
+  isML: boolean=false;
+  description: string="";
 
   currentUpload: Upload;
   dropzoneActive:boolean = false;
