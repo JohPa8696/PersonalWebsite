@@ -20,7 +20,7 @@ export class ContentmanagerComponent implements OnInit {
   languages: string="";
   technologies: string="";
   frameworks: string="";
-  images: string[]=[]; // Depreciated
+  // images: string[]=[]; // Depreciated
   videos: string="";
   isML: boolean=false;
   description: string="";
