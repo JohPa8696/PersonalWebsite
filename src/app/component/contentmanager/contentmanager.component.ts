@@ -4,6 +4,7 @@ import { UploadService } from '../../services/upload.service';
 import { Upload } from '../../models/Upload';
 import { Observable } from 'rxjs/Rx';
 import { DataService } from '../../services/data.service';
+
 import * as _ from "lodash";
 @Component({
   selector: 'app-contentmanager',
@@ -19,7 +20,7 @@ export class ContentmanagerComponent implements OnInit {
   languages: string="";
   technologies: string="";
   frameworks: string="";
-  images: string[]=[];
+  images: string[]=[]; // Depreciated
   videos: string="";
   isML: boolean=false;
   description: string="";
@@ -42,38 +43,38 @@ export class ContentmanagerComponent implements OnInit {
   handleDrop(fileList: FileList){
     let filesIndex = _.range(fileList.length);
     _.each(filesIndex, (idx) => {
-      this.currentUpload =new Upload(fileList[idx]);
+      this.currentUpload = new Upload(fileList[idx]);
       this.uploadService.uploadImage(this.currentUpload);
-      setTimeout(()=>{
-        this.images.push(this.currentUpload.url);
-      }, 5000);
     });
   }
 
   onProjectSubmit(){
     if(this.title != '' && this.type != '' && this.languages !='' && this.technologies !='' && this.frameworks != ''
       && this.description != ''){
+        var imageUrls = this.uploadService.getImageUrls();
         this.project = {
           title: this.title,
           type: this.type,
           languages: this.languages.split(','),
           technologies: this.technologies.split(','),
           framework: this.frameworks.split(','),
-          images: this.images,
+          images: imageUrls,
           videos: this.videos,
           isML: this.isML,
           description: this.description
         };
+        console.log(this.project.images);
         this.dataService.addProject(this.project);
         this.title = "";
         this.type="";
         this.languages="";
         this.technologies="";
         this.frameworks="";
-        this.images=[];
+        // this.images=[];
         this.isML=false;
         this.videos="";
         this.description="";
+        this.uploadService.clearImageUrls();
       }
   }
 

@@ -7,7 +7,7 @@ import { Upload } from '../models/Upload';
 
 @Injectable()
 export class UploadService {
-  imageurl: string;
+  imageUrls: string[]=[];
   constructor(private fdb: AngularFireDatabase) { }
 
   uploadImage(img: Upload){
@@ -24,8 +24,16 @@ export class UploadService {
       },
       () => {
         img.url = uploadTask.snapshot.downloadURL;
+        this.imageUrls.push(img.url);
       });
-    return img;
+  }
+
+  getImageUrls (){
+    return this.imageUrls;
+  }
+
+  clearImageUrls (){
+    this.imageUrls = [];
   }
 
 }
