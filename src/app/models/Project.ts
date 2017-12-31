@@ -8,6 +8,6 @@ export interface Project{
     framework?:string[];
     images?:string[];
     videos?:string;
-    description?:string;
+    description?:string[];
     isML:boolean;
 }

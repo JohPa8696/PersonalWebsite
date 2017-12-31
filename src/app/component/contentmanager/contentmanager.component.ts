@@ -61,7 +61,7 @@ export class ContentmanagerComponent implements OnInit {
           images: imageUrls,
           videos: this.videos,
           isML: this.isML,
-          description: this.description
+          description: this.description.split(',')
         };
         console.log(this.project.images);
         this.dataService.addProject(this.project);

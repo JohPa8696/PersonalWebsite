@@ -16,7 +16,9 @@
               <span class="badge badge-primary" *ngFor="let f of project.framework">{{f}}</span>
               <span class="badge badge-warning" *ngIf="project.ML">Machine Learning</span>
             </div>
-            {{project.description}}
+            <div class ="description">
+              <p *ngFor="let d of project.description">{{d}}</p>
+            </div>
             <a data-toggle="collapse" href="#img_{{project.id}}" aria-expanded="true" aria-controls="collapse-example" id="heading-example" class="d-block">
                 <i class="fa fa-chevron-down"></i>
             </a>
@@ -38,7 +40,6 @@
                   <span class="sr-only">Next</span>
                 </a>
               </div>
-
 
             </div>
           </div>

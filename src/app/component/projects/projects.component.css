@@ -39,7 +39,10 @@ span.badge{
   background-color: #F3EFE0;
   font-weight: normal;
 }
-
+p{
+    font-weight: normal;
+    margin-bottom: 0px;
+}
 a.title{
   color:white;
 }
