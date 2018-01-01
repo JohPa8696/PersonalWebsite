@@ -66,6 +66,10 @@ a.title:hover, a.title:active{
   font-weight: normal;
 }
 
+th{
+  text-align: center;
+}
+
 @media (max-width:1200px) {
   h1{
     font-size:3em;
