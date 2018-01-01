@@ -1,7 +1,7 @@
 export interface Project{
     id?: string;
     title?: string;
-    type?: string;
+    type?: string[];
     repoUrl?: string;
     languages?:string[];
     technologies?:string[];

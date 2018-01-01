@@ -42,18 +42,23 @@
       <input type="text" name="frameworks" class="form-control" id="framework" placeholder="Accord.Net, JavaFx etc..."  [(ngModel)]="frameworks" required>
     </div>
     <!-- ML -->
-    <div class="form-check">
+    <!-- <div class="form-check">
       <label class="form-check-label">
         <input type="checkbox" class="form-check-input" [checked]="isML" (change)="isML = !isML">
         Used Machine Learning?
       </label>
-    </div>
+    </div> -->
     <!-- Description -->
     <div class="form-group">
       <label for="description">Project Description</label>
       <textarea name="description" rows="6" class="form-control" id="description" placeholder="Description Here ..."  [(ngModel)]="description" required></textarea >
     </div>
 
+    <!-- URL -->
+    <div class="form-group">
+      <label for="repoUrl">Link to repo</label>
+      <input type="text" name="repoUrl" class="form-control" id="repoUrl" placeholder="Link to repo"  [(ngModel)]="frameworks" required>
+    </div>
     <!-- Video -->
     <div class="form-group">
       <label for="video">Video Links</label>

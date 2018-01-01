@@ -19,6 +19,17 @@ tr span:hover{
   cursor: pointer;
 }
 
+.project-type span.badge{
+  border: solid 2px #ffef66;
+  color: black;
+  background-color: transparent;
+}
+
+.project-type span.badge:hover, .project-type span.badge:focus, .project-type span.badge:active, .project-type   span.badge:target {
+  background-color: #ffef66;
+  color:white;
+}
+
 .languages span.badge{
   border: solid 2px #5cb85c;
   color: black;

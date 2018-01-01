@@ -49,17 +49,22 @@ export class ProjectsComponent implements OnInit {
     this.dataService.getProjects().subscribe(projects =>{
       this.projects = projects;
       this.filteredProjects = this.projects;
-
+      this.typeDict.clear();
+      this.languageDict.clear();
+      this.frameworkDict.clear();
+      this.technologyDict.clear();
       // Loop through the project and create maps for filtering
       _.each(_.range(this.projects.length), (i) => {
         // Project types
-        if (this.typeDict.get(this.projects[i].type) == undefined){
-            this.typeDict.set(this.projects[i].type,[this.projects[i]]);
-        } else {
-            let prjs = this.typeDict.get(this.projects[i].type);
-            prjs.push(this.projects[i]);
-            this.typeDict.set(this.projects[i].type,prjs);
-        }
+        _.each(_.range(this.projects[i].type.length),(j) =>{
+            if (this.typeDict.get(this.projects[i].type[j]) == undefined){
+                this.typeDict.set(this.projects[i].type[j],[this.projects[i]]);
+            } else {
+                let prjs = this.typeDict.get(this.projects[i].type[j]);
+                prjs.push(this.projects[i]);
+                this.typeDict.set(this.projects[i].type[j],prjs);
+            }
+        });
 
         // Languages
         _.each(_.range(this.projects[i].languages.length),(j) =>{
@@ -112,7 +117,7 @@ export class ProjectsComponent implements OnInit {
     if(key == 'type'){
       if(this.filters[0] == ftr){
         this.filters[0] = '';
-        this.filteredProjects = this.project;
+        this.filteredProjects = this.projects;
       } else{
         this.filters[0] = ftr;
         this.filteredProjects = this.typeDict.get(ftr);
@@ -120,7 +125,7 @@ export class ProjectsComponent implements OnInit {
     } else if (key == 'language'){
       if(this.filters[1] == ftr){
         this.filters[1] = '';
-        this.filteredProjects = this.project;
+        this.filteredProjects = this.projects;
       } else{
         this.filters[1] = ftr;
         this.filteredProjects = this.languageDict.get(ftr);
@@ -128,7 +133,7 @@ export class ProjectsComponent implements OnInit {
     } else if (key == 'framework'){
       if(this.filters[2] == ftr){
         this.filters[2] = '';
-        this.filteredProjects = this.project;
+        this.filteredProjects = this.projects;
       } else{
         this.filters[2] = ftr;
         this.filteredProjects = this.frameworkDict.get(ftr);
@@ -136,7 +141,7 @@ export class ProjectsComponent implements OnInit {
     } else {
       if(this.filters[3] == ftr){
         this.filters[3] = '';
-        this.filteredProjects = this.project;
+        this.filteredProjects = this.projects;
       } else{
         this.filters[3] = ftr;
         this.filteredProjects = this.technologyDict.get(ftr);

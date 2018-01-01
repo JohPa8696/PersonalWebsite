@@ -24,6 +24,7 @@ export class ContentmanagerComponent implements OnInit {
   videos: string="";
   isML: boolean=false;
   description: string="";
+  repoUrl: string="";
   currentUpload: Upload;
   dropzoneActive:boolean = false;
   project: Project;
@@ -54,12 +55,13 @@ export class ContentmanagerComponent implements OnInit {
         var imageUrls = this.uploadService.getImageUrls();
         this.project = {
           title: this.title,
-          type: this.type,
+          type: this.type.split(','),
           languages: this.languages.split(','),
           technologies: this.technologies.split(','),
           frameworks: this.frameworks.split(','),
           images: imageUrls,
           videos: this.videos,
+          repoUrl: this.repoUrl,
           isML: this.isML,
           description: this.description.split(',')
         };
@@ -73,6 +75,7 @@ export class ContentmanagerComponent implements OnInit {
         // this.images=[];
         this.isML=false;
         this.videos="";
+        this.repoUrl="";
         this.description="";
         this.uploadService.clearImageUrls();
       }
