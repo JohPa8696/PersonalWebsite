@@ -15,60 +15,16 @@
       <tbody>
         <tr>
           <td class="project-type">
-            <span class="badge badge-success"  onclick="myFunction()">System</span>
-            <span class="badge badge-success">WebApp</span>
-            <span class="badge badge-success">System</span>
-            <span class="badge badge-success">WebApp</span>
-            <span class="badge badge-success">System</span>
-            <span class="badge badge-success">WebApp</span>
-            <span class="badge badge-success">System</span>
-            <span class="badge badge-success">WebApp</span>
-            <span class="badge badge-success">System</span>
-            <span class="badge badge-success">WebApp</span>
-            <span class="badge badge-success">System</span>
-            <span class="badge badge-success">WebApp</span>
+            <h5><span class="badge badge-success" *ngFor="let typ of typeList" (click)="filter('type',typ)">{{typ}}</span></h5>
           </td>
           <td  class="languages">
-            <span class="badge badge-success">System</span>
-            <span class="badge badge-success">WebApp</span>
-            <span class="badge badge-success">System</span>
-            <span class="badge badge-success">WebApp</span>
-            <span class="badge badge-success">System</span>
-            <span class="badge badge-success">WebApp</span>
-            <span class="badge badge-success">System</span>
-            <span class="badge badge-success">WebApp</span>
-            <span class="badge badge-success">System</span>
-            <span class="badge badge-success">WebApp</span>
-            <span class="badge badge-success">System</span>
-            <span class="badge badge-success">WebApp</span>
+            <h5><span class="badge badge-success"  *ngFor="let lan of languageList" (click)="filter('language',lan)">{{lan}}</span></h5>
           </td>
           <td  class="frameworks">
-            <span class="badge badge-success">System</span>
-            <span class="badge badge-success">WebApp</span>
-            <span class="badge badge-success">System</span>
-            <span class="badge badge-success">WebApp</span>
-            <span class="badge badge-success">System</span>
-            <span class="badge badge-success">WebApp</span>
-            <span class="badge badge-success">System</span>
-            <span class="badge badge-success">WebApp</span>
-            <span class="badge badge-success">System</span>
-            <span class="badge badge-success">WebApp</span>
-            <span class="badge badge-success">System</span>
-            <span class="badge badge-success">WebApp</span>
+            <h5><span class="badge badge-success"  *ngFor="let fra of frameworkList" (click)="filter('framework',fra)">{{fra}}</span></h5>
           </td>
           <td  class="technologies">
-            <span class="badge badge-success">System</span>
-            <span class="badge badge-success">WebApp</span>
-            <span class="badge badge-success">System</span>
-            <span class="badge badge-success">WebApp</span>
-            <span class="badge badge-success">System</span>
-            <span class="badge badge-success">WebApp</span>
-            <span class="badge badge-success">System</span>
-            <span class="badge badge-success">WebApp</span>
-            <span class="badge badge-success">System</span>
-            <span class="badge badge-success">WebApp</span>
-            <span class="badge badge-success">System</span>
-            <span class="badge badge-success">WebApp</span>
+            <h5><span class="badge badge-success"  *ngFor="let tec of technologyList" (click)="filter('technology',tec)">{{tec}}</span></h5>
           </td>
         </tr>
       </tbody>
