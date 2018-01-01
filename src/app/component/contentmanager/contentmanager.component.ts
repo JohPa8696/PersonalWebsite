@@ -57,7 +57,7 @@ export class ContentmanagerComponent implements OnInit {
           type: this.type,
           languages: this.languages.split(','),
           technologies: this.technologies.split(','),
-          framework: this.frameworks.split(','),
+          frameworks: this.frameworks.split(','),
           images: imageUrls,
           videos: this.videos,
           isML: this.isML,

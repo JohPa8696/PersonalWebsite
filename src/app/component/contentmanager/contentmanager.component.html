@@ -70,8 +70,11 @@
              <i id="uploadicon" class="fa fa-cloud-upload fa-4x"></i>
         </div>
         <div *ngIf="currentUpload" width="100%;">
-            <progress class="progress is-success" width="100%;" min=1 max=100 value="{{ currentUpload?.progress }}"></progress>
-            Progress: {{currentUpload?.file.name}} | {{currentUpload?.progress}}% Complete
+          <div class="progress">
+            <div class="progress-bar progress-bar-success" role="progressbar" attr.aria-valuenow="{{ currentUpload?.progress }}" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+              Progress: {{currentUpload?.file.name}} | {{currentUpload?.progress}}% Complete
+            </div>
+          </div>
         </div>
     </div>
     <!-- SUBMIT BTN-->

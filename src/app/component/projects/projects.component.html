@@ -14,7 +14,21 @@
       </thead>
       <tbody>
         <tr>
-          <td>
+          <td class="project-type">
+            <span class="badge badge-success"  onclick="myFunction()">System</span>
+            <span class="badge badge-success">WebApp</span>
+            <span class="badge badge-success">System</span>
+            <span class="badge badge-success">WebApp</span>
+            <span class="badge badge-success">System</span>
+            <span class="badge badge-success">WebApp</span>
+            <span class="badge badge-success">System</span>
+            <span class="badge badge-success">WebApp</span>
+            <span class="badge badge-success">System</span>
+            <span class="badge badge-success">WebApp</span>
+            <span class="badge badge-success">System</span>
+            <span class="badge badge-success">WebApp</span>
+          </td>
+          <td  class="languages">
             <span class="badge badge-success">System</span>
             <span class="badge badge-success">WebApp</span>
             <span class="badge badge-success">System</span>
@@ -28,7 +42,7 @@
             <span class="badge badge-success">System</span>
             <span class="badge badge-success">WebApp</span>
           </td>
-          <td>
+          <td  class="frameworks">
             <span class="badge badge-success">System</span>
             <span class="badge badge-success">WebApp</span>
             <span class="badge badge-success">System</span>
@@ -42,21 +56,7 @@
             <span class="badge badge-success">System</span>
             <span class="badge badge-success">WebApp</span>
           </td>
-          <td>
-            <span class="badge badge-success">System</span>
-            <span class="badge badge-success">WebApp</span>
-            <span class="badge badge-success">System</span>
-            <span class="badge badge-success">WebApp</span>
-            <span class="badge badge-success">System</span>
-            <span class="badge badge-success">WebApp</span>
-            <span class="badge badge-success">System</span>
-            <span class="badge badge-success">WebApp</span>
-            <span class="badge badge-success">System</span>
-            <span class="badge badge-success">WebApp</span>
-            <span class="badge badge-success">System</span>
-            <span class="badge badge-success">WebApp</span>
-          </td>
-          <td>
+          <td  class="technologies">
             <span class="badge badge-success">System</span>
             <span class="badge badge-success">WebApp</span>
             <span class="badge badge-success">System</span>
@@ -79,7 +79,7 @@
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
       <div class="card-columns">
 
-        <div class="card" *ngFor="let project of projects">
+        <div class="card" *ngFor="let project of filteredProjects">
           <div class="card-header" [ngStyle]="getHeaderColor(project.type)" title= " A '{{project.type}}' software project">
             <a class="title" href="{{project.repoUrl}}"  target="_blank">{{project.title}}</a>
             <span style="float: right; color: black;">! {{project.type}}</span>
@@ -88,7 +88,7 @@
             <div class="card-subtitle mb-2 text-muted">
               <span class="badge badge-success" *ngFor="let l of project.languages">{{l}}</span>
               <span class="badge badge-info"  *ngFor="let t of project.technologies">{{t}}</span>
-              <span class="badge badge-primary" *ngFor="let f of project.framework">{{f}}</span>
+              <span class="badge badge-danger" *ngFor="let f of project.frameworks">{{f}}</span>
               <span class="badge badge-warning" *ngIf="project.ML">Machine Learning</span>
             </div>
             <div class ="description">

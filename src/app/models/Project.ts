@@ -5,7 +5,7 @@ export interface Project{
     repoUrl?: string;
     languages?:string[];
     technologies?:string[];
-    framework?:string[];
+    frameworks?:string[];
     images?:string[];
     videos?:string;
     description?:string[];

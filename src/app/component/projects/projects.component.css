@@ -11,6 +11,49 @@ h1{
   font-size: 4em;
 }
 
+th{
+  text-align: center;
+}
+
+tr span:hover{
+  cursor: pointer;
+}
+
+.languages span.badge{
+  border: solid 2px #5cb85c;
+  color: black;
+  background-color: transparent;
+}
+
+.languages span.badge:hover, .languages span.badge:focus, .languages span.active, .languages span.badge:target {
+  background-color: #5cb85c;
+  color:white;
+}
+
+.frameworks span.badge{
+  border: solid 2px #5bc0de;
+  color: black;
+  background-color: transparent;
+}
+
+.frameworks  span.badge:hover, .frameworks  span.badge:focus, .frameworks span.active, .frameworks span.badge:target {
+  background-color: #5bc0de;
+  color:white;
+}
+
+
+.technologies span.badge{
+  border: solid 2px 	#d9534f;
+  color: black;
+  background-color: transparent;
+}
+
+.technologies  span.badge:hover, .technologies  span.badge:focus, .technologies span.active, .technologies span.badge:target {
+  background-color: 	#d9534f;
+  color:white;
+}
+
+
 .row{
   margin: 50px auto;
 }
@@ -66,9 +109,6 @@ a.title:hover, a.title:active{
   font-weight: normal;
 }
 
-th{
-  text-align: center;
-}
 
 @media (max-width:1200px) {
   h1{
