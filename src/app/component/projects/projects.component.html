@@ -38,7 +38,8 @@
         <div class="card" *ngFor="let project of filteredProjects">
           <div class="card-header" [ngStyle]="getHeaderColor(project.type)" title= " A '{{project.type}}' software project">
             <a class="title" href="{{project.repoUrl}}"  target="_blank">{{project.title}}</a>
-            <!-- <span style="float: right; color: black;">! {{project.type}}</span> -->
+            <!-- <span style="float: right; color: black;">class="fa fa-github fa-2x"</span> -->
+            <a href="{{project.repoUrl}}" class="fa fa-github fa-2x" target="_blank" ></a>
           </div>
           <div class="card-block">
             <div class="card-subtitle mb-2 text-muted">

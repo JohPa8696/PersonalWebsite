@@ -64,6 +64,16 @@ tr span:hover{
   color:white;
 }
 
+.fa-github{
+  color: black;
+  float: right;
+  margin-top: -5px;
+}
+
+.fa-github:hover, .fa-github:focus{
+  color: white;
+  text-decoration: none !important;
+}
 
 .row{
   margin: 50px auto;

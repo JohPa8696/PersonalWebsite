@@ -185,11 +185,12 @@ export class ProjectsComponent implements OnInit {
   }
 
   getHeaderColor(type:String){
-    if (type == 'System'){
+    var rand =  Math.random()*4;
+    if (rand<=1){
       return this.systemStyle;
-    } else if (type == 'WebApp') {
+    } else if (rand>=1 && rand <2) {
       return this.webAppStyle;
-    } else if (type == 'Tool') {
+    } else if (rand>=2 && rand<3) {
       return this.toolStyle;
     } else {
       return this.mobileAppStyle;
